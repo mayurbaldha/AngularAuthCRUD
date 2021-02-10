@@ -1,0 +1,62 @@
+<mat-toolbar color="primary">
+  <span>Fashion Events</span>
+  <span class="example-spacer"></span>
+  <div class="example-button-row">
+    <button
+      mat-raised-button
+      class="example-icon"
+      (click)="loadEvents()"
+      style="margin-right: 10px"
+    >
+      Refresh
+    </button>
+    <button mat-raised-button class="example-icon" (click)="openAddModal()" style="margin-right: 10px">
+      Add
+    </button>
+    <button
+      mat-icon-button
+      class="example-icon logout-icon"
+      aria-label="Example icon-button with logout icon"
+      (click)="logoutuser()"
+    >
+      <mat-icon>logout</mat-icon>
+    </button>
+  </div>
+</mat-toolbar>
+
+<mat-card>
+  <table mat-table [dataSource]="fashionevents" class="mat-elevation-z8">
+    <ng-container matColumnDef="eventId">
+      <th mat-header-cell *matHeaderCellDef>No.</th>
+      <td mat-cell *matCellDef="let element">{{ element.eventId }}</td>
+    </ng-container>
+    <ng-container matColumnDef="eventName">
+      <th mat-header-cell *matHeaderCellDef>Name</th>
+      <td mat-cell *matCellDef="let element">{{ element.eventName }}</td>
+    </ng-container>
+    <ng-container matColumnDef="eventInfo">
+      <th mat-header-cell *matHeaderCellDef>Info</th>
+      <td mat-cell *matCellDef="let element">{{ element.eventInfo }}</td>
+    </ng-container>
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef>Edit/Delete</th>
+      <td mat-cell *matCellDef="let element">
+        <mat-icon
+          aria-hidden="false"
+          aria-label="edit icon"
+          (click)="openEditModal(element)"
+          >mode_edit</mat-icon
+        >
+        <mat-icon
+          aria-hidden="false"
+          aria-label="delete icon"
+          (click)="openDeleteModal(element)"
+          >delete</mat-icon
+        >
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+</mat-card>

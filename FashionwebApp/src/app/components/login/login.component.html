@@ -1,0 +1,37 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>My Fashion EventApp</span>
+  </mat-toolbar-row>
+</mat-toolbar>
+<mat-card>
+  <mat-card-content class="loginContainer">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <h2>Log In</h2>
+      <mat-error *ngIf="loginInvalid">
+        The email and password were not recognised
+      </mat-error>
+      <mat-form-field appearance="fill" class="full-width-input">
+        <mat-label>Enter your Email</mat-label>
+        <input matInput placeholder="Email" formControlName="email" required />
+        <mat-error> Please provide a valid email address </mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="full-width-input">
+        <mat-label>Enter your password</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'" formControlName="password"/>
+        <span
+          mat-icon-button
+          matSuffix
+          (click)="hide = !hide"
+          [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hide"
+        >
+          <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+      </span>
+      </mat-form-field>
+      <button mat-raised-button color="primary" type="submit" class="loginButton">
+        Login</button
+      ><br /><br />
+    </form>
+    <p>Don't have account? <a routerLink="/register">Register</a></p>
+  </mat-card-content>
+</mat-card>

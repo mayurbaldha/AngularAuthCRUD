@@ -1,0 +1,22 @@
+<h1>Add Event</h1>
+
+<mat-dialog-content>
+  <form class="example-form" [formGroup]="form" (ngSubmit)="onEventAdd()">
+    <mat-form-field appearance="fill" class="full-width-input">
+      <mat-label>Enter Event Name</mat-label>
+      <input matInput placeholder="Event Name" formControlName="eventName" required />
+      <mat-error> Please provide a Event Name </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="example-full-width">
+      <mat-label>Event Info</mat-label>
+      <textarea matInput placeholder="Event Info Details..." formControlName="eventInfo" required></textarea>
+      <mat-error> Please provide a Event Info </mat-error>
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-raised-button color="primary" (click)="onEventAdd()">Add</button>
+  <button mat-raised-button color="accent" (click)="onCancelClick()">
+    Cancel
+  </button>
+</mat-dialog-actions>

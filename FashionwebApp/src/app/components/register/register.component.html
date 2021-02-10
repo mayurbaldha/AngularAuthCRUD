@@ -1,0 +1,50 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>My Fashion EventApp</span>
+  </mat-toolbar-row>
+</mat-toolbar>
+<mat-card>
+    <mat-card-content class="loginContainer">
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <h2>Register</h2>
+        
+        <mat-error *ngIf="loginInvalid">
+          The Registation infromation were Invalid
+        </mat-error>
+
+
+        <mat-form-field  appearance="fill" class="full-width-input">
+          <mat-label>Enter your Firstname</mat-label>
+            <input matInput placeholder="First name" formControlName="firstname" required>
+            <mat-error>
+              Please provide a Firstname
+            </mat-error>
+          </mat-form-field>
+
+        <mat-form-field  appearance="fill" class="full-width-input">
+          <mat-label>Enter your Lastname</mat-label>
+            <input matInput placeholder="Last name" formControlName="lastname" required>
+            <mat-error>
+              Please provide a Lastname
+            </mat-error>
+          </mat-form-field>
+
+        <mat-form-field  appearance="fill" class="full-width-input">
+          <mat-label>Enter your Email</mat-label>
+            <input matInput placeholder="Email" formControlName="email" required>
+            <mat-error>
+              Please provide a valid email address
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field  appearance="fill" class="full-width-input">
+            <mat-label>Enter your password</mat-label>
+            <input matInput type="password" placeholder="Password" formControlName="password" required>
+            <mat-error>
+              Please provide a valid password
+            </mat-error>
+          </mat-form-field>
+        <button mat-raised-button color="primary" class="loginButton">Register</button><br/><br/>
+      </form>
+      <p>Already have account? <a routerLink="/login">Login</a></p>
+    </mat-card-content>
+  </mat-card>

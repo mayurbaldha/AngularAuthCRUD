@@ -1,0 +1,130 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+.example-card {
+  max-width: 400px;
+}
+
+.content {
+  // color: #FFF;;
+}
+.background-sky {
+  background-color: #673ab7;
+  background: linear-gradient(145deg, #673ab7, #623bb7);
+  color: #fff;
+}
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  min-height: 480px;
+  height: 80vh;
+  max-height: 560px;
+  box-sizing: border-box;
+  padding: 48px 48px 32px;
+  overflow: hidden;
+  transform: skewY(8deg);
+  transform-origin: 100%;
+  // margin-top: 128px;
+}
+section#intro .hero-logo {
+  display: flex;
+}
+section#intro .hero-logo img {
+  width: 400px;
+  height: 400px;
+  margin-bottom: 8px;
+  padding: 0;
+  filter: drop-shadow(0 2px 2px rgba(10, 16, 20, 0.24));
+}
+section#intro {
+  // width: 100%;
+  // max-width: 1040px;
+  // margin: -7% auto 0;
+  // padding-top: 0;
+  // padding-bottom: 0;
+  flex: 1;
+  align-items: stretch;
+  display: flex;
+}
+section#intro .hero-headline {
+  font-size: 40px;
+  font-size: 2rem;
+  line-height: 64px;
+  line-height: 2rem;
+  font-weight: 500;
+  margin: 32px 0 0 48px !important;
+}
+section#intro h1 {
+  font-size: 3rem;
+}
+section#intro h3 {
+  font-size: 1.5rem;
+}
+section#intro span {
+  font-size: 1rem;
+}
+section#intro .partsection {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  
+  // justify-content: flex-end;
+  // margin: 32px 0 0 48px;
+}
+section#intro {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 900px;
+  height: 480px;
+  margin: 0 auto -32px;
+  padding: 0 0 0;
+  color: #fff;
+}
+article {
+  padding: 32px;
+}
+@media screen and (min-width: 767px) {
+  .paragraph {
+    padding: 130px 0 140px;
+    text-align:center;
+  }
+  .paragraph .para-title {
+    font-size: 24px;
+    color: #584f60;
+    font-weight: bold;
+    text-align: center;
+  }
+  .paragraph .para-text {
+    font-size: 16px;
+    color: #666;
+    margin-top: 32px;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .paragraph {
+    padding: 4.5rem 0 4rem;
+    text-align:center;
+  }
+  .paragraph .para-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #584f60;
+    margin: 0 2.3rem;
+    text-align: center;
+    line-height: 1.8rem;
+  }
+  .paragraph .para-text {
+    font-size: 1.36rem;
+    margin: 1.6rem 4rem 0;
+    color: #666;
+    text-align: center;
+    line-height: 1.8rem;
+  }
+}

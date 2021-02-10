@@ -1,0 +1,8 @@
+<h1 mat-dialog-title>Do you want to delete <b><i>{{data.eventName}}</i></b> event?</h1>
+
+<mat-dialog-actions>
+    <button mat-raised-button color="primary" (click)="onDeleteClick()">Delete</button>
+    <button mat-raised-button color="accent" (click)="onCancelClick()">
+      Cancel
+    </button>
+  </mat-dialog-actions>
